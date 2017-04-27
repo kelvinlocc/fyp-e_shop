@@ -1,0 +1,76 @@
+﻿<ion-view>
+
+  <!--<ion-header-bar>
+    <h1 class="title">Login</h1>
+    <div class="buttons">
+      <button class="button button-clear button-positive" ng-click="closeLogin()">Close</button>
+    </div>
+  </ion-header-bar>-->
+
+
+
+  <ion-content>
+    <form name="myForm">
+      <div class="list">
+
+        <label>
+          <br />
+        <center><img src="img/e_shop_white.jpeg" alt="what image shows" height="150" width="200"></center>
+          <center>HKUST E-Shop</center>
+          <br />
+        </label>
+
+          <label class="item item-input">
+          <span class="input-label">Email</span>
+          <input type="email" name="email"ng-model="loginData.email"  ng-required="true" ng-minlength="4" ng-maxlength="20">
+          <span class="error" ng-show="myForm.email.$error.required">
+          Required!
+          </span>
+
+            <span class="error" ng-show="myForm.email.$error.email">
+              Not a valid email!
+            </span>
+        
+    
+          </label>
+
+        <label class="item item-input">
+        <span class="input-label">Username</span>
+        <input type="text"  name="username" ng-model="loginData.username" ng-required="true" ng-minlength="4" ng-maxlength="10">
+            <span class="error" ng-show="myForm.username.$error.required">
+              Required!
+            </span>
+     
+        </label>
+
+
+        <label class="item item-input">
+        <span class="input-label">Password</span>
+        <input type="password" name="password" ng-model="loginData.password" ng-required="true" ng-minlength="4" ng-maxlength="10">
+         <!--<button clear item-right href="#/app/forgetPassword">Forget password</button>-->
+            <a item-right   href="#/app/forgetPassword" >forget Password &nbsp;&nbsp;</a>
+              <span class="error" ng-show="myForm.password.$error.required">
+        Required!
+         </span>
+        </label>
+
+
+
+        <ion-item menu-close ng-click="doLogin()">
+          <i class="icon ion-ios-home"></i> Login
+        </ion-item>
+
+
+        <div class="row">
+          <label for="height"> Don't have an account?&nbsp;&nbsp;  </label><br/><a href="#/app/signUp">Sign Up</a>
+          <!--<label for="height"><p href="#/app/signUp">Sign Up</p></label>-->
+        </div>
+
+
+      </div>
+    </form>
+    <!--<button class="button button-clear button-positive" ng-click="isLoginTest()">test</button>-->
+
+  </ion-content>
+
+</ion-view>

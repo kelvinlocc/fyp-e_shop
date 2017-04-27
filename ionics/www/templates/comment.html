@@ -1,0 +1,47 @@
+<ion-modal-view>
+    <ion-header-bar>
+
+
+        <h1 class="title">comment</h1>
+
+        <div class="buttons">
+            <button class="button button-clear button-positive" ng-click="commentClose()">Close</button>
+        </div>
+    </ion-header-bar>
+
+    <ion-content>
+
+        <div>
+            <rating ng-model="rating.rate" max="rating.max"></rating>
+
+            <ionic-ratings ratingsobj='ratingsObject'></ionic-ratings>
+            <div>{{temp}}</div>
+        </div>
+        <h1> 
+             <rating ng-model="rating.rate" max="rating.max"></rating>
+
+            <ionic-ratings ratingsobj='ratingsObject'></ionic-ratings>
+            <input type="text" ng-model="loginData.username" placeholder="leave your comment...">
+        </h1>
+        <div class="row">
+            <div class="col col-50">
+                <button class="button button-positive">
+                    button-positive
+                </button>
+            </div>
+            <div class="col col-50">
+                <button class="button button-positive">
+                    button-positive
+                </button>
+                
+                
+                   <rating ng-model="rating.rate" max="rating.max"></rating>
+
+            <ionic-ratings ratingsobj='ratingsObject'></ionic-ratings>
+                
+                
+            </div>
+        </div>
+    </ion-content>
+
+</ion-modal-view>

@@ -1,0 +1,48 @@
+﻿<ion-view view-title="Home" ng-controller="homeCtrl">
+  <ion-content>
+    <center>
+      <h2 class="black">Semester opening sale</h2>
+    </center>
+
+    <ion-slide-box slider-pager on-slide-changed="slideHasChanged($index)" show-pager="true" auto-play="true" does-continue="true">
+      <ion-slide>
+        <label>
+                    <center><img src="img/home1.jpeg" alt="what image shows" height="300" width="200"></center>
+                </label>
+      </ion-slide>
+
+      <ion-slide>
+        <label>
+          <center><img src="img/home2.jpeg" alt="what image shows" height="300" width="200"></center>
+        </label>
+      </ion-slide>
+
+      <ion-slide>
+        <label>
+          <center><img src="img/dictionary.jpeg" alt="what image shows" height="300" width="200"></center>
+        </label>
+      </ion-slide>
+
+    </ion-slide-box>
+
+    <hr class="calm" align="centre" width="90%">
+
+
+
+    <div>
+      <p style="font-size:20px" class="calm">&nbsp;&nbsp; what's new?</p>
+    </div>
+    
+    <br>
+
+    <ion-list>
+      <ion-item ng-repeat="news in newsList" href="#/app/home/{{news.id}}">
+        {{news.title}}
+      </ion-item>
+
+    </ion-list>
+
+
+
+  </ion-content>
+</ion-view>

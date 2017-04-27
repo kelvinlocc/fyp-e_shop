@@ -1,0 +1,118 @@
+﻿<ion-view view-title="product details">
+  <ion-nav-title>
+
+
+    <h1 class="title">{{product.shop[0].shop_name}} - {{product.product_name}}</h1>
+    <!--<div class="buttons">
+      <a align="right" class="button button-icon icon ion-heart"></a>
+    </div>-->
+
+  </ion-nav-title>
+  <ion-content>
+
+
+
+    <div class="card">
+
+      <div class="w3-container item-right">
+
+        
+
+
+          <div class="w3-container">
+
+            <img id="rcorners2" ng-src="{{product.imagePath}}" onerror="this.src='img/Product01.jpg'" class="customized-image">
+            <span class="stars middle">
+              <span ng-style="{ 'width': test }"></span>
+            </span>
+            <p align="right">{{product.price | currency}}</p>
+            <hr>
+            <p>{{product.description}}</p><br>
+          </div>
+        
+          <button style="float: right;" class="button button-icon icon ion-bag" style="font-size:75%" ng-click="makeOrderP_popUp()">make Order</button>
+
+      </div>
+
+      <div class="item item-body item-text-wrap">
+        <!--<img width="5" ng-src="img/Product01.jpg" auto_img onerror="this.src='img/Product01.jpg'">-->
+          <!--<img ng-src="{{product.imagePath}}" auto_img onerror="this.src='img/Product01.jpg'">-->
+          <img ng-src="{{product.imagePath}}" height="150"/>
+      
+        <div>shop_id:  {{product.shop_id}}</div>
+        <div>product_id:  {{product.product_id}}</div>
+
+        <div>{{product.shop[0].shop_name}}</div>
+        <div>{{product.product_name}}</div>
+        <div>description: {{product.description}}</div>
+        <h2>
+          <span class="badge badge-assertive" style="font-size:75%">{{product.price | currency}}</span>
+        </h2>
+
+        <div class="row">
+          <div class="col text-right">
+            <!--<rating ng-model="rating.defaultRate" max="rating.max"></rating>      
+            <ionic-ratings ratingsobj='ProductRatingsObject'></ionic-ratings>-->
+            <span class="stars middle">
+              <span ng-style="{ 'width': test }"></span>
+            </span>
+
+            <!--<button class="button button-small button-light" ng-click="showPopup()">make comment</button>-->
+            <!--<button class="button button-small button-light" ng-click="makeOorder()">make Order</button>-->
+            <button class="button button-icon icon ion-bag" style="font-size:75%" ng-click="makeOrderP_popUp()">make Order</button>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="row">
+        <div class="col col-offset-5">
+          <h4>
+            Customer Comments &nbsp;&nbsp;&nbsp;
+            <small>
+              Sort by: &nbsp;
+              <input type="text" ng-model="orderText">
+            </small>
+          </h4>
+          <ul class="list">
+            <li ng-repeat="comment in comments | orderBy:orderText">
+              <blockquote>
+
+                  <!--<rating ng-model="rating.max" max="rating.max"></rating>
+                  <ionic-ratings ratingsobj='comment.ratingObj'></ionic-ratings>-->
+                <span class="stars middle">
+                  <span ng-style="{ 'width': getStars(comment.rating) }"></span>
+                </span>
+                <br />
+                  
+                  <font size="5">{{comment.description}}</font>
+
+
+                  <footer>{{comment.user[0].username}}, {{comment.createdAt | date:'MMM. dd, yyyy'}}</footer>
+            </blockquote>
+            </li>
+          </ul>
+
+          <div class="row">
+            <div class="col text-right">
+              <rating ng-model="rating.defaultRate" max="rating.max"></rating>           
+              <ionic-ratings ratingsobj='USERRatingsObject'></ionic-ratings>
+             
+            </div>
+          </div>
+
+          <div class="item item-input">
+            <span class="input-label ion-person">comment:</span>
+            <input type="text" ng-model="user.feedback">
+            <button item-right class="button button-icon icon  ion-ios-paperplane" ng-click="makeComment()">send</button>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </ion-content>
+
+
+</ion-view>

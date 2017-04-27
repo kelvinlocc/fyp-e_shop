@@ -1,0 +1,18 @@
+<ion-view view-title="E-coupon">
+    <ion-content>
+        <div>E-coupon list: </div>
+        <ion-list>
+            <ion-item ng-repeat="e_coupon in e_couponList " href="#/app/seasonalStoreDetails">
+
+                <label>
+<!--                    <center><img src="{{e_coupon.imageSource}}" alt="what image shows" height="150" width="200"></center>-->
+                    <center><img src="{{e_coupon.imageSource}}" alt="what image shows" auto_img></center>
+                    <div class="inner"><center><img src="{{e_coupon.imageSource}}" alt="what image shows" ></center></div>
+                </label>
+                {{e_coupon.imageSource}}+{{e_coupon.id}}
+            </ion-item>
+
+        </ion-list>
+
+    </ion-content>
+</ion-view>

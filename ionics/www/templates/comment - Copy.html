@@ -1,0 +1,128 @@
+
+<ion-view view-title="product details">
+    <!--    <div>productDetails.html</div>-->
+    <ion-nav-title>
+        <!--
+        <div>Souvenirs
+            <a align="right" class="button button-icon icon ion-heart"></a>
+
+        </div>
+-->
+
+
+        <h1 class="title">Souvenirs</h1>
+        <div class="buttons">
+            <a align="right" class="button button-icon icon ion-heart"></a>
+
+        </div>
+
+
+
+    </ion-nav-title>
+    <ion-content>
+
+
+
+
+
+
+        <div class="card">
+            <div class="item item-body item-text-wrap">
+                <img class="full-image" ng-src="{{baseURL+dish.image}}" alt="unknow">
+
+
+                <h2>{{dish.name}}
+                    
+                 <span class="badge badge-assertive" style="font-size:75%">{{dish.price | currency}}</span></h2>
+                <p>{{dish.description}}</p>
+
+
+<!--
+
+                <div class="row part1">
+                    <div class="col col-center">
+                        <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+                            <div class="list list-inset">
+
+                                <div class="labelbox">
+                                    <div class="row">
+                                        <div class="col col-50">
+                                            <span class="input-label">'  Satisfaction</span>
+                                        </div>
+
+                                        <div class="col">
+                                            <rating ng-model="rating.rate" max="rating.max"></rating>123
+                                            <ionic-ratings ratingsobj='ratingsObject'>123</ionic-ratings>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+-->
+
+
+                <div class="row">
+                    <div class="col text-right">
+
+                        <rating ng-model="rating.rate" max="rating.max"></rating> 
+                        <button class="button button-small button-light" ng-click="comment()">rate it!</button>
+                        <ionic-ratings ratingsobj='ratingsObject'></ionic-ratings>
+                       
+                       
+                           
+                    </div>
+                </div>
+
+
+
+
+                <!--
+
+                              <label class="item ">
+    <div class="item-content">Wave intensity</div>
+    <div class="range range-positive">
+        <i class="icon ion-minus-circled"></i>
+        <input type="range" name="volume" min="10" max="20" value="14"  >
+        <i class="icon ion-plus-circled"></i>
+    </div>
+</label>
+-->
+
+
+
+
+
+
+            </div>
+
+
+            <div class="row">
+
+                <div class="col col-offset-5">
+                    <h4>Customer Comments &nbsp;&nbsp;&nbsp;
+                       <small>Sort by: &nbsp;
+                             <input type="text" ng-model="orderText">
+                          </small></h4>
+                    <ul class="list">
+                        <li ng-repeat="comment in dish.comments | orderBy:orderText">
+                            <blockquote>
+                                <p>{{comment.rating}} Stars</p>
+                                <p>{{comment.comment}}</p>
+                                <footer>{{comment.author}}, {{comment.date | date:'MMM. dd, yyyy'}}</footer>
+                            </blockquote>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </ion-content>
+
+
+
+
+</ion-view>

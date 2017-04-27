@@ -1,0 +1,57 @@
+﻿<ion-view view-title="Orders">
+  <h1>Orders: </h1>
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="order in user.orders | orderBy:orderText">
+
+        <div class="list card">
+          <div class="item item-avatar">
+            <img src="//tutorialsplane.com/runtest/ionic/img/profile.jpg">
+            <!--<h2>{{order.shop[0].shop_name}}</h2>-->
+            <h2>Souvenir</h2>
+            <p>id: {{order.order_id}}</p>
+          </div>
+          <div class="item item-body">
+
+       
+            <ion-list>
+              <ion-item ng-repeat="item in order.items">
+                <ion-item class="item item-avatar item-button-right">
+                  <img src="{{item.imagePath}}">
+                  <h2>{{item.product[0].product_name}} x {{item.quantity}}</h2>
+                  <p style="font-size:75%">{{item.product[0].price | currency}}</p>
+
+                  <button class="button button-icon icon ion-ios-trash-outline" ng-click="deleteOrder_ITEMS_popup(item)"></button>
+
+                </ion-item>
+              </ion-item>
+
+            </ion-list>
+            <ion-item >
+              Status: {{order.status}}, {{order.updatedAt | date:'MMM. dd, yyyy'}}    
+
+              <p align="right">total: {{getTotalAmount(order.items) | currency}}</p>
+            </ion-item>
+       
+
+          </div>
+          <div class="item tabs tabs-secondary tabs-icon-left">
+            <a class="tab-item" ng-click="updateOrder(order)">
+              <i class="icon ion-ios-paperplane"></i>
+              {{getStatusForButton(order.status)}}
+            </a>
+            <i class="tab-item" ng-click="deleteOrder(order)">
+              <i class="icon ion-android-delete" ></i>
+              delete order
+            </i>
+            <a class="tab-item" >
+              <i class="icon ion-share"></i>
+              Share
+            </a>
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>

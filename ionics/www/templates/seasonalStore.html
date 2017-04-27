@@ -1,0 +1,16 @@
+<ion-view view-title="Seasonal Store">
+    <ion-content>
+        <div>seasonal store list: </div>
+        <ion-list>
+            <ion-item ng-repeat="shop in shopList " href="#/app/seasonalStoreDetails" >
+
+                <label>
+                    <center><img src="{{shop.imageSource}}" alt="what image shows" height="150" width="200"></center>
+                </label>
+                {{shop.imageSource}}+{{shop.id}}
+            </ion-item>
+
+        </ion-list>
+
+    </ion-content>
+</ion-view>

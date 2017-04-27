@@ -1,0 +1,90 @@
+<ion-view view-title="myShoppingCart">
+
+    <ion-header class="bar bar-balanced bar-subheader">
+
+
+        <div class="row header">
+            <div class="col col-60">
+                <div>Items</div>
+            </div>
+            <div class="col col-20">
+                <div>Quantity</div>
+            </div>
+            <div class="col col-20">
+                <div class="right">Total Price</div>
+            </div>
+
+        </div>
+    </ion-header>
+
+    <ion-content class="has-subheader">
+
+
+        <ion-list>
+            <!--            <ion-item ng-repeat="dish in dishes " href="#/app/menu/{{dish.id}}" class="item-thumbnail-left">-->
+            <ion-item ng-repeat="product in products ">
+                <!--class="item-thumbnail-left"-->
+                <div class="row header">
+
+                    <div class="col col-40">
+                        <img width="5%" ng-src="{{baseURL+product.image}}">
+
+                        <!--
+                        <ion-item class="item-profile">
+                            <div class="item-avatar">
+                                <img ng-src="{{baseURL+product.image}}">
+                            </div>
+                        </ion-item>
+-->
+
+                    </div>
+
+                    <div class="col col-40">
+                        <div style="font-size:75%"> {{product.name}}</div>
+
+                    </div>
+
+                    <div class="col col-20">
+                        <div> 2</div>
+
+                    </div>
+
+
+                    <div class="col col-20">
+                        <div class="right">
+                            <span>{{product.price | currency}}</span>
+                        </div>
+                    </div>
+
+
+
+                    <ion-option-button class="button-assertive icon ion-plus-circled" ng-click="addFavorite({{dish.id}})">
+                    </ion-option-button>
+
+                </div>
+
+                <!--                <a href="#/app/myProfile/myFavourite/{{dish.id}}">see details</a>-->
+
+
+            </ion-item>
+        </ion-list>
+
+        <!--        <div class="col col-offset-25">total cost:       {{calculateTotalPrice()}}</div>-->
+
+        <div class="row header">
+            <div class="col col-60">
+                <div class="col col-offset-25">total:</div>
+            </div>
+            <div class="col col-20">
+                <div class="right"> {{calculateTotalPrice()}}</div>
+            </div>
+
+
+        </div>
+        <label class="item ">
+            <center>  <button class="button button-positive small_button" type="submit">Confirm Order</button></center>
+        </label>
+    </ion-content>
+
+
+</ion-view>

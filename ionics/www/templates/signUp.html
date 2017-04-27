@@ -1,0 +1,77 @@
+﻿<ion-view ng-controller="SignUpCtrl">
+
+  <ion-content>
+    <form name="myForm">
+      <div class="list">
+        <label>
+          <center><img src="img/e_shop.png" alt="what image shows" height="150" width="200"></center>
+        </label>
+
+        <label class="item item-input">
+          <span class="input-label">Email</span>
+          <input type="email" name="email" ng-model="loginData.email" ng-required="true" ng-minlength="4" ng-maxlength="20">
+          <span class="error" ng-show="myForm.email.$error.required">
+            Required!
+          </span>
+          <span class="error" ng-show="myForm.email.$error.email">
+            Not a valid email!
+          </span>
+          <span class="error" ng-show="myForm.email.$error.minlength">
+            too short
+          </span>
+          <span class="error" ng-show="myForm.email.$error.maxlength">
+            too long
+          </span>
+        </label>
+
+        <label class="item item-input">
+          <span class="input-label">Username</span>
+          <input type="text" name="username" ng-model="loginData.username" ng-required="true" ng-minlength="4" ng-maxlength="20">
+          <span class="error" ng-show="myForm.username.$error.required">
+            Required!
+          </span>
+  
+          <span class="error" ng-show="myForm.username.$error.minlength">
+            too short
+          </span>
+          <span class="error" ng-show="myForm.username.$error.maxlength">
+            too long
+          </span>
+        </label>
+
+
+        <label class="item item-input">
+          <span class="input-label">Password</span>
+          <input type="password" name="password" ng-model="loginData.password" ng-required="true" ng-minlength="4" ng-maxlength="20">
+          <span class="error" ng-show="myForm.password.$error.required">
+            Required!
+          </span>
+
+          <span class="error" ng-show="myForm.password.$error.minlength">
+            too short
+          </span>
+          <span class="error" ng-show="myForm.password.$error.maxlength">
+            too long
+          </span>
+        </label>
+
+        <label class="item item-input">
+          <span class="input-label">confirm Password</span>
+          <input type="password" name="confirm_password" ng-model="loginData.confirm_password" ng-required="true" >
+          <span class="error" ng-show="myForm.confirm_password.$error.required">
+            Required!
+          </span>
+
+        </label>
+
+        
+        <ion-item menu-close ng-click="doSignUp()">
+          <i class="icon ion-ios-home"></i> sign up
+        </ion-item>
+
+
+
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

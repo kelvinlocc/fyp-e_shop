@@ -1,0 +1,20 @@
+<ion-view view-title="Shop List">
+    <h1>shoplist</h1>
+    <ion-content  ng-init="loadImages()">
+        <h1>shoplist</h1>
+        <div class="row responsive-md">
+            <div class="col col-25" ng-repeat="shop in shopList">
+                <img  width="100%" ng-src="{{shop.imageSource}}">
+            </div>
+        </div>
+    </ion-content>
+
+    <!--
+        <ion-content>
+            <div class="col col-50" ng-repeat="photo in photos">
+                <img collection-repeat="shop in shopList" item-width="50%" item-height="50%" ng-src="{{shop.imageSource}}">
+            </div>
+        </ion-content>
+-->
+
+</ion-view>

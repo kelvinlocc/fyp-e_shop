@@ -1,0 +1,60 @@
+﻿<ion-view view-title="myFavourite">
+
+
+
+
+
+
+  <ion-content>
+    <ion-list>
+      <!--            <ion-item ng-repeat="dish in dishes " href="#/app/menu/{{dish.id}}" class="item-thumbnail-left">-->
+      <ion-item ng-repeat="favor in favors " class="item">
+
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+        <div class="w3-container">
+
+          <div class="w3-card-4" style="width:110%;height:130%">
+            <!--<header class="w3-container w3-light-grey">-->
+            <header class="w3-container w3-light-blue">
+              <p></p>
+              <h2>{{favor.product[0].product_name}}</h2>
+              <p></p>
+              <p></p>
+              <p></p>
+
+            </header>
+
+
+            <div class="w3-container">
+
+              <img id="rcorners2" ng-src="{{favor.imagePath}}" onerror="this.src='img/Product01.jpg'" class="customized-image">
+              <small><p align="right">{{favor.product[0].price | currency}}</p></small>
+              <hr>
+              <p>{{favor.product[0].description}}</p><br>
+            </div>
+            <button class="w3-button w3-block w3-blue" ng-click="removeFavor({{$index}})">delete</button>
+
+          </div>
+        </div>
+
+
+        <!--<img ng-src="img/Product01.jpg" auto_img>  
+        <div>{{favor.product[0].product_name}}</div>
+        <h2>
+          <span  class="badge badge-assertive" style="font-size:75%">{{favor.product[0].price | currency}}</span>
+        </h2>
+        <p>des{{favor.description}}</p>
+        <button class="{{favor.icon}}" ng-click="removeFavor({{$index}})"></button>-->
+
+          <!--<ion-option-button class="button-calm icon ion-minus-circled" ng-click="removeFavor({{$index}})">
+          </ion-option-button>-->
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

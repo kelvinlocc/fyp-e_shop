@@ -1,0 +1,270 @@
+﻿/* Empty. Add your own CSS if you like */
+
+#wrapper {
+  margin-left: 200px;
+}
+
+#content {
+  float: right;
+  width: 100%;
+  background-color: #CCF;
+}
+
+#sidebar {
+  float: left;
+  width: 200px;
+  margin-left: -200px;
+  background-color: #FFA;
+}
+
+#cleared {
+  clear: both;
+}
+
+
+
+
+
+#rcorners2 {
+  border-radius: 50px;
+  /*border: 2px solid #73AD21;*/
+  padding: 20px;
+  width: 400px;
+  height: 300px;
+}
+
+
+#rcorners3 {
+  border-radius: 50px;
+  /*border: 2px solid #73AD21;*/
+  padding: 20px;
+  width: 400px;
+ 
+}
+
+#rcorners4 {
+  border-radius: 50px;
+ 
+}
+
+
+
+.myItem {
+  position: relative;
+  padding-top: 20px;
+  display: inline-block;
+}
+
+.notify-badge {
+  position: absolute;
+  right: +10px;
+  top: 10px;
+  background: red;
+  text-align: center;
+  border-radius: 30px 30px 30px 30px;
+  color: white;
+  padding: 5px 10px;
+  font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+span.stars, span.stars span {
+  display: block;
+  /* Download the star image here: http://stackoverflow.com/questions/1987524/turn-a-number-into-star-rating-display-using-jquery-and-css */
+  background: url('https://apppresser.com/wp-content/uploads/2015/11/stars.png') 0 -16px repeat-x;
+  width: 80px;
+  height: 16px;
+}
+
+  span.stars span {
+    background-position: 0 0;
+  }
+
+.alignright {
+  float: right;
+}
+
+.ionic_ratings .read_only {
+  pointer-events: none !important;
+}
+
+
+.custom-thumbnail > img:first-child, .ionic .custom-thumbnail .item-image, .ionic .custom-thumbnail .item-content > img:first-child, .ionic .custom-thumbnail .item-content .item-image {
+
+width:10px;
+height:10px;
+}
+
+.square {
+  height: 75px;
+  width: 150px;
+}
+
+.heartButton {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.customized-image {
+  max-height: 100% !important;
+  max-width: 100% !important;
+}
+
+.custom-heart_icon {
+  
+  color: red;
+}
+
+.small_button {
+    line-height: 5px !important;
+    min-height: 24px !important;
+    font-size: 15px
+}
+
+
+/*for ion-slide-box */
+
+.slider-pager {
+    top: initial;
+    bottom: 10px;
+    /*    padding-top: 8px;*/
+    /*    margin-top: 80px;*/
+}
+
+.slider-pager-page.active
+{
+color: #4DD0E1;
+}
+
+.slider-slide {
+    /*    padding-top: 300px;*/
+    margin-bottom: 40px;
+    color: #000;
+    background-color: #fff;
+    text-align: center;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+}
+
+
+
+.row.unlimited-items {
+    flex-wrap: wrap;
+}
+
+.row.unlimited-items .col {
+    flex: none;
+    width: 50%;
+}
+
+.Max_heightWidthSet {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.auto_img {
+    width: 100px;
+    height: auto;
+}
+
+.inner {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+}
+
+
+/*// not use*/
+
+.auto_img_25px {
+    width: 50px;
+    height: auto;
+}
+
+img {
+    width: inherit;
+}
+
+.img_test {
+    object-fit: cover;
+}
+
+.align_right {
+    text-align: right;
+}
+
+
+/*
+.item 
+{
+	border:1px solid pink;
+    width: 500px;
+    float: left;
+    margin: 3px;
+    padding: 3px;
+}
+*/
+
+.item-text-center {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    /*
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+*/
+    align-items: center;
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+.badge-notify {
+  background: red;
+  position: relative;
+  top: -20px;
+  left: -35px;
+}
+
+
+.list .item.item-accordion {
+  line-height: 38px;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: 0.09s all linear;
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+
+
+

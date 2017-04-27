@@ -1,0 +1,153 @@
+﻿<!--<style>
+  a {
+    text-decoration: default;
+  }
+
+</style>-->
+
+<ion-view view-title="shop page">
+  <div class="tabs-striped tabs-color-calm has-title">
+
+    <ion-tabs class="tabs-positive tabs-icon-top">
+      <ion-tab title="Shop" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline" "shop in shops" class="has-view-title">
+        <br>
+        <ion-content>
+          <ion-slide-box slider-pager on-slide-changed="slideHasChanged($index)" show-pager="true" auto-play="true" does-continue="true">
+            <ion-slide>
+              <label>
+                <center><img src="img/souvenir.jpg" alt="what image shows" height="300" width="200"></center>
+              </label>
+            </ion-slide>
+            <ion-slide>
+              <!--                                <ion-content><center><img src="img/james.jpg" alt="what image shows" height="150" width="200"></center></ion-content>-->
+              <label>
+                <center><img src="img/souvenir_2.jpg" alt="what image shows" height="300" width="200"></center>
+              </label>
+            </ion-slide>
+            <ion-slide>
+              <!--                                                <ion-content><center><img src="img/james.jpg" alt="what image shows" height="150" width="200"></center></ion-content>-->
+              <label>
+                <center><img src="img/souvenir_3.jpg" alt="what image shows" height="300" width="200"></center>
+              </label>
+            </ion-slide>
+          </ion-slide-box>
+          <ion-item>
+            <div>
+              <p style="font-size:20px" class="calm"> OPENING HOURS</p>
+            </div>
+            <div>Monday to Friday: 11:00-18:00</div>
+            <div>Saturday: 12:00-18:00</div>
+            <div>Sunday and public hoilday are closed</div>
+            <br>
+            <div>
+              <p style="font-size:20px" class="calm"> CONTACT US</p>
+            </div>
+            <div>Address:Clear water Bay Kowloon HK</div>
+            <div>Phone: 2623 1222</div>
+            <div>Email: sovenvirshop@ust.hk</div>
+            <br />
+            <a href="https://souvenir.ust.hk/">click here to visit our offical website</a>
+            <!--<button ng-click="reserve()"> booking</button>-->
+          </ion-item>
+        </ion-content>
+      </ion-tab>
+      <ion-tab title="Product" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline"  >
+        <br>
+        <ion-content >
+          <ion-list>
+            <ion-item ng-repeat="product in products" class="item   "
+                      href="#/app/myProfile/myFavourite/productDetails" 
+                      ng-click="productClick(product)" >
+          
+
+
+              <meta name="viewport" content="width=device-width, initial-scale=1">
+
+              <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+              
+              <div class="w3-container">
+
+                <div class="w3-card-4" style="width:110%;height:130%">
+                  <!--<header class="w3-container w3-light-grey">-->
+                    <header class="{{product.favor_bar}}">
+                      <p></p>
+                      <h2>{{product.product_name}}</h2>
+                      <p></p>
+                      <p></p>
+                      <p></p>
+
+                    </header>
+                  
+
+                  <div class="w3-container">
+                    
+                    <img id="rcorners2" ng-src="{{product.imagePath}}" onerror="this.src='img/Product01.jpg'" class="customized-image" >
+                    <small><p align="right">{{product.price | currency}}</p></small>
+                    <hr>
+                    <p>{{product.description}}</p><br>
+                  </div>
+                  <button class="{{product.favor_btn}}" ng-click="updateFavor($event,product.product_id)">{{product.favor}}</button>
+                  <!--<button class="w3-button w3-block w3-dark-grey" ng-click="updateFavor($event,product.product_id)">like</button>-->
+
+                </div>
+              </div>
+             
+
+            </ion-item>
+
+
+          </ion-list>
+        </ion-content>
+      </ion-tab>
+      <ion-tab title="Promotion" icon-on="ion-ios-flame" icon-off="ion-ios-flame-outline" > 
+        <br>
+        <ion-content >
+          <ion-list>
+            <ion-item ng-repeat="product in products_p" class="item  item-icon-right "
+                      href="#/app/myProfile/myFavourite/productDetails"
+                      ng-click="productClick(product)">
+
+
+              <div class="w3-container">
+
+                <div class="w3-card-4" style="width:110%;height:130%">
+                  <header class="w3-container w3-light-grey">
+                   
+                    <p></p>
+                    <h2 >{{product.product_name}}</h2>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+
+                  </header>
+
+
+                  <div class="w3-container">
+
+                    <img id="rcorners2" ng-src="{{product.imagePath}}" onerror="this.src='img/Product01.jpg'" class="customized-image">
+                    <span class="notify-badge">HOT</span>
+                    <small><p align="right">{{product.price | currency}}</p></small>
+
+                    <hr>
+                    <p>{{product.description}}</p><br>
+                  </div>
+                </div>
+              </div>
+
+
+             
+
+           
+
+</ion-item>
+          </ion-list>
+        </ion-content>
+      </ion-tab>
+
+    </ion-tabs>
+  </div>
+
+
+
+</ion-view>
