@@ -78,7 +78,7 @@
                         console.log("$scope.product[i].product_name " + $scope.products[i].product_name);
                         
                         console.log("$scope.product[i].favor " + $scope.products[i].favor + "$scope.products[i].imagePath " + $scope.products[i].imagePath);
-                        if ( i % 2) {
+                        if ($scope.products[i].on_sale="1") {
                             $scope.products_p.push($scope.products[i]);
                         }
                     };

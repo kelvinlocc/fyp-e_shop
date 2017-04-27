@@ -1,33 +1,73 @@
 ﻿angular.module('conFusion.controllers').controller('homeCtrl', function ($scope, $ionicModal,
-    $timeout, $localStorage, $ionicPopup, $ionicLoading, $http) {
+    $timeout, $localStorage, $ionicPopup, $ionicLoading, $http, $q) {
 
 
     console.log("homeCtrl is working..");
-    $scope.newsList = [{
-        title: '15% Off For every purchase Over $200',
-        id: 1
-    },
-    {
-        title: 'premium items are 70% off or more!',
-        id: 2
-    },
-   
-    ];
-    getcomments();
-    function getcomments() {
-        console.log("getComments");
-        $http.get('http://localhost:3000/posters').
-            then(function (response) {
-                console.log("response " + response);
-                $scope.temp = response.data;
-                console.log('$scope.test: ' + $scope.temp);
-                console.log('$scope.test: ' + response[0]);
-                console.log('$scope.test: ' + response.filepath);
-                console.log('$scope.test: ' + $scope.temp[0].filepath);
+ 
 
-                // console.log('$scope.test: '+$scope.test.description);//useful
-            });
+
+    $scope.loadAllMeasure = function () {
+        loadData().then(function (data) {
+           
+            $scope.newsList = data.data;
+            console.log("news: ", data);
+            console.log("news: ", data[0].description);
+        });
+        loadPoster().then(function (data){
+            var posters_temp = data.data;
+            
+            for (var i = 0; i < posters_temp.length; i++){
+                var poster_id = posters_temp[i].poster_id;
+                var url = "http://localhost:3000/posters/openImage?poster_id=" + poster_id;
+                posters_temp[i].imagPath = url;
+            }
+            $scope.posters = posters_temp;
+            console.log("posters", posters_temp[0]);
+            console.log("posters", posters_temp[0].image_path);
+            console.log("posters", posters_temp[0].imagPath);
+
+        });
+
     };
+    $scope.loadAllMeasure();
+
+
+    function loadData() {
+        var deferred = $q.defer();
+
+        var url = "http://localhost:3000/news?";
+        $http.get(url).
+            then(function (response) {
+               
+               
+
+                deferred.resolve(response);
+
+
+
+            });
+        return deferred.promise;
+    }
+
+    function loadPoster() {
+        var deferred = $q.defer();
+
+        var url = "http://localhost:3000/posters?";
+        $http.get(url).
+            then(function (response) {
+
+
+
+                deferred.resolve(response);
+
+
+
+            });
+        return deferred.promise;
+    }
+
+
+
 
 
 });
