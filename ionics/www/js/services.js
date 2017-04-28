@@ -1,7 +1,8 @@
 ﻿'use strict';
 
 angular.module('conFusion.services', ['ngResource'])
-    .constant("baseURL", "http://localhost:3000/") //change this to adpate the live server
+    //.constant("baseURL", "http://localhost:3000/") //change this to adpate the live server
+    .constant("baseURL", "http://34.208.168.170:3000/") //change this to adpate the live server
     //** ip: http://192.168.0.108/
     //"http://192.168.0.100:3000/" //ipconfig
     .factory('getPoster', ['$resource', 'baseURL', function ($resource, baseURL) {

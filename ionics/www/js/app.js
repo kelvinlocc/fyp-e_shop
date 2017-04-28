@@ -50,15 +50,7 @@ angular.module('conFusion', ['ionic', 'ngCordova', 'conFusion.controllers', 'con
   })
 
   .config(function ($stateProvider, $urlRouterProvider) {
-    $stateProvider
-
-      //test for validation
-      // .state('signin', {
-      //     url: '/sign-in',
-      //     templateUrl: 'templates/sample_login.html',
-      //     controller: 'SignInCtrl'
-      // })
-
+    $stateProvider      
       .state('app', {
         url: '/app',
         abstract: true,
@@ -77,15 +69,7 @@ angular.module('conFusion', ['ionic', 'ngCordova', 'conFusion.controllers', 'con
         }
       })
 
-    //   .state('app.menu', {
-    //     url: '/menu',
-    //     views: {
-    //       'mainContent': {
-    //         templateUrl: 'templates/menu.html',
-    //         controller: 'MenuController' // PlaylistsCtrl
-    //       }
-    //     }
-    //   })
+
 
       .state('app.dishdetail', {
         url: '/menu/:id',

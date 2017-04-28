@@ -6,7 +6,6 @@
 
        
 
-
         console.log("shopPage_controller started...");
         getUserFavor();
         $scope.user = {};
@@ -68,7 +67,7 @@
                         $scope.products[i].favor_bar = $scope.getFavorBar($scope.products[i].product_id);
                         $scope.products[i].favor_btn = $scope.getFavorBtn($scope.products[i].product_id);
 
-                        $scope.products[i].imagePath = "http://localhost:3000/products/openImage?product_id=" + $scope.products[i].product_id;
+                        $scope.products[i].imagePath = "openImage?product_id=" + $scope.products[i].product_id;
                         $scope.products[i].imagePath_width = "250";
                         console.log(" $scope.products[i].imagePath " + $scope.products[i].imagePath);
 
@@ -133,7 +132,6 @@
 
         isProductInFavorList = function (product_id) {
             for (var i = 0; i < userFavorList.length; i++) {
-                //console.log("user favor product name and id " + userFavor[i].product[0].product_name + "," + userFavor[i].product[0].product_id);
                 if (product_id == userFavorList[i]) {
                     return true;
                 }
@@ -149,7 +147,7 @@
 
             var user_id = 2;
 
-            var getlink = "http://localhost:3000/userProfiles/deleteUserFavourite?" + "product_id=" + product_id + "&user_id=" + user_id;
+            var getlink = baseURL+"userProfiles/deleteUserFavourite?" + "product_id=" + product_id + "&user_id=" + user_id;
             console.log("getLink" + getlink);
             $http.get(getlink).
                 then(function (response) {
@@ -169,7 +167,7 @@
             var user_id = "2";
             var Indata = { "product_id": product_id, "user_id": user_id };
 
-            $http.post("http://localhost:3000/userProfiles/newUserFavourite", Indata).then(function (data, status, headers, config) {
+            $http.post(baseURL+"userProfiles/newUserFavourite", Indata).then(function (data, status, headers, config) {
                 //alert("success");
                 getUserFavor();
 
@@ -185,7 +183,7 @@
 
         function getUserFavor() {
             var user_id = "2";
-            var link = "http://localhost:3000/userProfiles/findUserFavouritesByUser?user_id=" + user_id;
+            var link = baseURL+"userProfiles/findUserFavouritesByUser?user_id=" + user_id;
             $http.get(link).
                 then(function (response) {
                     console.log("get favor");
@@ -201,20 +199,18 @@
 
                     }
                     $scope.getProduct();
-                    // console.log('$scope.test: '+$scope.test.description);//useful
                 });
         };
 
         $scope.getProductImage = function (p_id) {
             //var user_id = "2";
-            var link = "http://localhost:3000/products/openImage?product_id=" + p_id;
+            var link = baseURL+"products/openImage?product_id=" + p_id;
             $http.get(link).
                 then(function (response) {
                     console.log("get favor");
                     console.log("response", response);
 
                     return response.da
-                    // console.log('$scope.test: '+$scope.test.description);//useful
                 });
         };
 

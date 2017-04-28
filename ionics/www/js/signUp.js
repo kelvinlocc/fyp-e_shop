@@ -1,4 +1,5 @@
-﻿angular.module('conFusion.controllers').controller('SignUpCtrl', function ($scope, $ionicModal, $timeout, $localStorage, $ionicPopup, $ionicLoading) {
+﻿angular.module('conFusion.controllers').controller('SignUpCtrl', function ($scope,
+    $ionicModal, $timeout, $localStorage, $ionicPopup, $ionicLoading,baseURL) {
 
 
     console.log("SignUpCtrl is working..");
@@ -45,16 +46,46 @@
                 template: 'password not match!'
             });
 
-        } 
+        }
+        showIonicLoading();
 
         $localStorage.storeObject('userinfo', $scope.loginData);
-        // Simulate a login delay. Remove this and replace with your login
-        // code if using a login system
-        // $scope.sample = 'sample test';
-        // $timeout(function () {
-        //     $scope.closeLogin();
-        // }, 1000);
+        
     };
+
+    $scope.loadAllMeasure = function () {
+        signUp().then(function (data) {
+
+            $scope.newsList = data.data;
+            console.log("news: ", data);
+
+            //console.log("news: ", data[0].description);
+        });
+    
+
+    };
+    $scope.loadAllMeasure();
+
+    showIonicLoading = function () {
+        $ionicLoading.show({
+            template: '<ion-spinner></ion-spinner> Loading ...'
+        })
+    };
+
+
+    function signUp() {
+        var deferred = $q.defer();
+
+        var url = baseURL + "news?";
+        console.log("news@ " + url);
+        $http.get(url).
+            then(function (response) {
+                deferred.resolve(response);
+            });
+        return deferred.promise;
+    }
+
+
 
     function checkUserInfo() {
         $ionicPopup.alert({

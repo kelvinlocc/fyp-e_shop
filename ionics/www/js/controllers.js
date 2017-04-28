@@ -1,4 +1,5 @@
-﻿angular.module('conFusion.controllers', []).controller('AppCtrl', function ($scope, $ionicModal, $timeout, $localStorage, $ionicPopup) {
+﻿angular.module('conFusion.controllers', []).controller('AppCtrl', function ($scope, $ionicModal, $timeout,
+    $localStorage, $ionicPopup) {
 
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
